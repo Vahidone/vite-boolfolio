@@ -3,6 +3,7 @@
 import axios from 'axios';
 import { store } from './data/store';
 import ListComponent from './components/ListComponent.vue';
+import Loader from './components/partials/Loader.vue';
 
 
 
@@ -10,11 +11,13 @@ export default {
   name: 'App',
 
   components: {
-    ListComponent
+    ListComponent,
+    Loader
   },
 
   data() {
     return {
+      isLoaded:false,
 
 
 
@@ -27,6 +30,7 @@ export default {
       axios.get(store.apiUrl + 'projects')
 
       .then(results => {
+          this.isLoaded = true;
           console.log(results.data.data);
           store.projects = results.data.data;
         })
@@ -43,7 +47,8 @@ export default {
 <template>
 
   <div class="container">
-    <ListComponent />
+    <loader v-if="!isLoaded" />
+    <ListComponent v-else />
   </div>
 
 </template>
