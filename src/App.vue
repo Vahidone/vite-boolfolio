@@ -2,16 +2,21 @@
 
 import axios from 'axios';
 import { store } from './data/store';
+import ListComponent from './components/ListComponent.vue';
 
 
 
 export default {
   name: 'App',
 
+  components: {
+    ListComponent
+  },
+
   data() {
     return {
 
-      title: 'Hello World',
+
 
     }
   },
@@ -23,6 +28,7 @@ export default {
 
       .then(results => {
           console.log(results.data);
+          store.projects = results.data;
         })
     }
 
@@ -35,9 +41,11 @@ export default {
 </script>
 
 <template>
+
   <div class="container">
-    <h1>{{ title }}</h1>
+    <ListComponent />
   </div>
+
 </template>
 
 <style lang="scss">
