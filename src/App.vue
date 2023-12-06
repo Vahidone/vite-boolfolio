@@ -27,8 +27,8 @@ export default {
       axios.get(store.apiUrl + 'projects')
 
       .then(results => {
-          console.log(results.data);
-          store.projects = results.data;
+          console.log(results.data.data);
+          store.projects = results.data.data;
         })
     }
 
