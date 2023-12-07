@@ -26,3 +26,5 @@ routes: [
  
 ]
 });
+
+export { router }
