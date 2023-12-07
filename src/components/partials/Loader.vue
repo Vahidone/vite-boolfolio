@@ -1,21 +1,22 @@
-
-
 <script>
 export default {
   name: 'Loader',
-  props: {
+  props:{
     title: String
   }
 }
 </script>
 
+
 <template>
-  <div class="text-center">
-    <h4>{{ title }}</h4>
+  <div class="text-center py-5">
+    <h4 class="my-5">{{ title }}</h4>
     <div class="lds-hourglass"></div>
+
   </div>
-  
 </template>
+
+
 
 <style lang="scss" scoped>
 .lds-hourglass {
@@ -32,8 +33,8 @@ export default {
   height: 0;
   margin: 8px;
   box-sizing: border-box;
-  border: 32px solid green;
-  border-color: green transparent green transparent;
+  border: 32px solid #cef;
+  border-color: #cef transparent #cef transparent;
   animation: lds-hourglass 1.2s infinite;
 }
 @keyframes lds-hourglass {
@@ -49,6 +50,5 @@ export default {
     transform: rotate(1800deg);
   }
 }
-
 
 </style>

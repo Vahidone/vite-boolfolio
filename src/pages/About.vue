@@ -1,22 +1,24 @@
-
 <script>
   export default {
     name: 'About',
     data() {
       return {}
     },
-    computed: {},
+    components:{},
+    methods: {},
     mounted() {},
-    methods: {}
+    computed: {}
   }
 </script>
 
-
 <template>
-  <div>About</div>
+  <div>
+    <h1>About</h1>
+    <p>Questo è un testo in About</p>
+  </div>
 </template>
 
 
-<style lang="scss">
+<style lang="scss" scoped>
 
 </style>

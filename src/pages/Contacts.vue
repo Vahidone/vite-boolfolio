@@ -1,6 +1,6 @@
 <script>
   export default {
-    name: 'Home',
+    name: 'Contacts',
     data() {
       return {}
     },
@@ -13,8 +13,8 @@
 
 <template>
   <div>
-    <h1>Home</h1>
-    <p>Questo è un testo in Home</p>
+    <h1>Contatti</h1>
+    <p>Questo è un testo in Contatti</p>
   </div>
 </template>
 

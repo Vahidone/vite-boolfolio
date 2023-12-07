@@ -1,6 +1,6 @@
 <script>
   export default {
-    name: 'Home',
+    name: 'Error404',
     data() {
       return {}
     },
@@ -12,10 +12,7 @@
 </script>
 
 <template>
-  <div>
-    <h1>Home</h1>
-    <p>Questo è un testo in Home</p>
-  </div>
+  <div>Errore 404!</div>
 </template>
 
 
