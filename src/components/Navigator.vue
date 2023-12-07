@@ -39,7 +39,7 @@
 
    <button
     @click="callApi(paginator.lastPageUrl)"
-    :disabled="paginator.currentPage == 3"
+    :disabled="paginator.currentPage == paginator.lastPage"
    >
       &gt;|
     </button>
