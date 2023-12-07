@@ -20,7 +20,15 @@ export default {
   data() {
     return {
       isLoaded:false,
-      links: []
+      paginator: {
+
+        links: [],
+        firstPageUrl: '',
+        lastPageUrl: '',
+        currentPage: '',
+        lastPage: ''
+      }
+
 
 
 
@@ -36,7 +44,13 @@ export default {
       .then(results => {
           this.isLoaded = true;
           store.projects = results.data.data;
-          this.links = results.data.links;
+          this.paginator.links = results.data.links;
+          this.paginator.firstPageUrl = results.data.first_page_url;
+          this.paginator.lastPageUrl = results.data.last_page_url;
+          this.paginator.currentPage = results.data.current_Page;
+          this.paginator.lastPage = results.data.last_Page;
+
+          
          
           
         })
@@ -59,7 +73,7 @@ export default {
 
       <ListComponent />
   
-      <navigator :links="links" @callApi="getApi"/>
+      <navigator :paginator="paginator" @callApi="getApi"/>
     </div>
 
   </div>

@@ -5,7 +5,7 @@
     name: 'Navigator',
 
     props: {
-      links: Array
+      paginator: Object
     },
 
 
@@ -28,13 +28,19 @@
 <template>
   <div class="nav-wrapper">
 
-    <button>
+    <button
+    @click="callApi(paginator.firstPageUrl)"
+    :disabled="paginator.currentPage == 1"
+    >
       |&lt;
     </button>
    
-   <button v-for="link in links" :key="link.label" v-html="link.label" :disabled="link.active || !link.url" @click="callApi(link.url)"></button>
+   <button v-for="link in paginator.links" :key="link.label" v-html="link.label" :disabled="link.active || !link.url" @click="callApi(link.url)"></button>
 
-   <button>
+   <button
+    @click="callApi(paginator.lastPageUrl)"
+    :disabled="paginator.currentPage == 3"
+   >
       &gt;|
     </button>
   
