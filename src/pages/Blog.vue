@@ -15,7 +15,7 @@ export default {
   },
   data(){
     return {
-      titolo: 'I miei project',
+      titolo: 'I miei progetti',
       isLoaded: false,
       paginator:{
         links: [],
@@ -54,20 +54,27 @@ export default {
 
 <template>
 
-    <Loader v-if="!isLoaded" />
+  <h1>{{ titolo }}</h1>
 
-    <div v-else>
-      <BlogComponent  />
-      <Navigator
-        :paginator="paginator"
-        @callApi="getApi"
-      />
-    </div>
+  <Loader v-if="!isLoaded" />
+
+
+  <div v-else>
+    <BlogComponent  />
+    <Navigator
+      :paginator="paginator"
+      @callApi="getApi"
+    />
+  </div>
 
     
 
 </template>
 
-<style lang="scss">
+<style lang="scss" scoped>
+
+h1{
+  margin-bottom: 20px;  
+}
 
 </style>

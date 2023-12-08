@@ -16,7 +16,7 @@ import { store } from '../data/store';
 </script>
 
 <template>
-  <h1>I miei progetti</h1>
+  
   <ul>
     <li v-for="project in store.projects" :key="project.id" >
       <router-link :to="{name: 'projectDetail', params:{slug: project.slug}}"  class="title">{{ project.title }}</router-link>
@@ -30,9 +30,7 @@ import { store } from '../data/store';
 
 
 <style lang="scss" scoped>
-h1{
-  margin-bottom: 20px;  
-}
+
 ul{
   list-style:none;
   .title, em, strong{
