@@ -15,7 +15,7 @@ export default {
   },
   data(){
     return {
-      titolo: 'I miei post',
+      titolo: 'I miei project',
       isLoaded: false,
       paginator:{
         links: [],
@@ -27,6 +27,7 @@ export default {
       
     }
   },
+
   methods:{
 
     getApi(endpoint){
